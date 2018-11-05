@@ -1,0 +1,127 @@
+//    LOCAL COSMOS DB API tests
+
+###  hello
+GET http://localhost:7071/api/hello
+Content-Type: application/json; charset=utf-8
+Cache-Control: no-cache
+Pragma: no-cache
+
+###  get preferences
+GET http://localhost:7071/api/preferences/user2@domain.com
+Content-Type: application/json; charset=utf-8
+Cache-Control: no-cache
+Pragma: no-cache
+
+###  save preferences
+POST http://localhost:7071/api/preferences
+content-type: application/json
+Cache-Control: no-cache
+Pragma: no-cache
+
+  {
+  	"id":"user2@domain.com",
+  	"links":[
+  		{ "title":"title1", "url":"url1"},
+  		{	"title":"title2", "url":"url2"},
+      {	"title":"title3", "url":"url3"},
+      {	"title":"title4", "url":"url4"},
+      {	"title":"title5", "url":"url5"},
+      {	"title":"title6", "url":"url6"},
+      {	"title":"title7", "url":"url7"},
+      {	"title":"title8", "url":"url8"},
+      {	"title":"title9", "url":"url9"},
+      {	"title":"title10","url":"url10"}
+  		],
+    "color": "red"
+  }
+
+
+//    Azure Function COSMOS DB API tests
+
+
+###  hello
+GET https://chiverton365-preferencesv2-eastus.azurewebsites.net/api/hello
+Content-Type: application/json; charset=utf-8
+Cache-Control: no-cache
+Pragma: no-cache
+
+###  get preferences
+GET https://chiverton365-preferencesv2-eastus.azurewebsites.net/api/preferences/user2@domain.com
+Content-Type: application/json; charset=utf-8
+Cache-Control: no-cache
+Pragma: no-cache
+
+###  save preferences
+POST https://chiverton365-preferencesv2-eastus.azurewebsites.net/api/preferences
+content-type: application/json
+Cache-Control: no-cache
+Pragma: no-cache
+
+  {
+  	"id":"user2@domain.com",
+  	"links":[
+  		{ "title":"title1", "url":"url1"},
+  		{	"title":"title2", "url":"url2"},
+      {	"title":"title3", "url":"url3"},
+      {	"title":"title4", "url":"url4"},
+      {	"title":"title5", "url":"url5"},
+      {	"title":"title6", "url":"url6"},
+      {	"title":"title7", "url":"url7"},
+      {	"title":"title8", "url":"url8"},
+      {	"title":"title9", "url":"url9"},
+      {	"title":"title10","url":"url10"}
+  		],
+    "color": "red"
+  }
+
+
+  *****************************************   traffic manager  *****************************************
+
+
+###  traffic manager: ping (anonymous)
+GET https://chiverton365-preferences.trafficmanager.net/
+Content-Type: application/json; charset=utf-8
+Cache-Control: no-cache
+Pragma: no-cache
+
+###  traffic manager: hello (anonymous)
+GET https://chiverton365-preferences.trafficmanager.net/hello
+Content-Type: application/json; charset=utf-8
+Cache-Control: no-cache
+Pragma: no-cache
+
+###  traffic manager: hello (anonymous)
+GET https://chiverton365-preferences.trafficmanager.net/api/hello
+Content-Type: application/json; charset=utf-8
+Cache-Control: no-cache
+Pragma: no-cache
+
+
+###  traffic manager: get user prefs (authenticated)
+GET https://chiverton365-preferences.trafficmanager.net/api/preferences/user2@domain.com
+Content-Type: application/json; charset=utf-8
+Cache-Control: no-cache
+Pragma: no-cache
+
+###  traffic manager: save user prefs  (authenticated)
+POST https://chiverton365-preferences.trafficmanager.net/api/preferences
+content-type: application/json
+Cache-Control: no-cache
+Pragma: no-cache
+
+  {
+  	"id":"user2@domain.com",
+  	"links":[
+  		{ "title":"title1", "url":"url1"},
+  		{	"title":"title2", "url":"url2"},
+      {	"title":"title3", "url":"url3"},
+      {	"title":"title4", "url":"url4"},
+      {	"title":"title5", "url":"url5"},
+      {	"title":"title6", "url":"url6"},
+      {	"title":"title7", "url":"url7"},
+      {	"title":"title8", "url":"url8"},
+      {	"title":"title9", "url":"url9"},
+      {	"title":"title10","url":"url10"}
+  		],
+    "color": "red"
+  }
